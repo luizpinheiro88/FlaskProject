@@ -32,22 +32,24 @@ def findBook(id):
     book = BookModel.query.filter_by(id=id).first()
     if book:
         return render_template("data.html", book=book)
-    return f"Livro com id={id} não existe"
+    return f"Livro com id={id} não existe", 404
+
 
 @book_blueprint.route('/data/<int:id>/update', methods=["GET", "POST"])
 def update(id):
     book = BookModel.query.get(id)
     if not book:
-        return f"Livro com id={id} não existe"
+        return f"Livro com id={id} não existe", 404
 
     if request.method == 'POST':
         book.name = request.form["name"]
         book.year = request.form["year"]
         book.author = request.form["author"]
         db.session.commit()
-        return redirect(f"/data/{id}")
+        return redirect('/data')  # Redireciona para a lista de livros
 
     return render_template("update.html", book=book)
+
 
 @book_blueprint.route('/data/<int:id>/delete', methods=['GET', 'POST'])
 def delete(id):
@@ -56,6 +58,7 @@ def delete(id):
         if book:
             db.session.delete(book)
             db.session.commit()
-            return redirect('/data')
+            return redirect('/data')  # Redireciona para a lista de livros
         abort(404)
     return render_template('delete.html', book=book)
+

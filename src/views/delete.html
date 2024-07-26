@@ -1,0 +1,72 @@
+<!-- delete.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Livro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button-danger {
+            background-color: #dc3545;
+        }
+        .button-secondary {
+            background-color: #6c757d;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Livro</h1>
+        <p>Você está prestes a excluir o livro:</p>
+        <h2>{{ book.name }}</h2>
+        <p><strong>Autor:</strong> {{ book.author }}</p>
+        <p><strong>Ano:</strong> {{ book.year }}</p>
+        
+        <form action="" method="POST">
+            <p>Tem certeza de que deseja excluir este livro?</p>
+            <button type="submit" class="button button-danger">Excluir</button>
+            <a href="/data" class="button button-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

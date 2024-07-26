@@ -1,9 +1,16 @@
+<!-- data.html -->
 <h3>Nome do Livro</h3>
-<p>{{book.name}}</p>
+<p>{{ book.name }}</p>
 <hr>
 <h3>Ano</h3>
-<p>{{book.year}}</p>
+<p>{{ book.year }}</p>
 <hr>
 <h3>Autor</h3>
-<p>{{book.author}}</p>
+<p>{{ book.author }}</p>
 <hr>
+
+<form action="/data/{{ book.id }}/delete" method="POST">
+    <p>Tem certeza de que deseja excluir este livro?</p>
+    <input type="submit" value="Excluir">
+    <a href="/data">Cancelar</a>
+</form>

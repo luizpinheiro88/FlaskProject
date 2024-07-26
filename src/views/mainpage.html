@@ -1,7 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo ao Gerenciamento de Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-
-<h1>Bem Vindo ao Gerenciamento de Livros</h1>
-
-<p>Os detalhes sobre as rotas encontram-se no README</p>
+<body>
+    <h1>Bem Vindo ao Gerenciamento de Livros</h1>
+    <p>Use os botões abaixo para navegar para as diferentes páginas:</p>
+    <a href="/create" class="button">Adicionar Livro</a>
+    <a href="/data" class="button">Listar Livros</a>
+</body>
+</html>
